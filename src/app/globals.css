@@ -1,26 +1,117 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --background: #f7f9fc;
+  --surface: #ffffff;
+  --foreground: #0b1b33;
+  --muted: #55657d;
+  --line: #e2e8f1;
+  --brand-ink: #01224a;
+  --brand: #126ce4;
+  --brand-soft: #e8f0fd;
+  --pomee: #e0474f;
+  --pomee-soft: #fdecec;
+  --leaf: #2fa36b;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #060d1a;
+    --surface: #0c1729;
+    --foreground: #e8eef8;
+    --muted: #94a3bb;
+    --line: #1c2a42;
+    --brand-ink: #e8eef8;
+    --brand: #5aa0ff;
+    --brand-soft: #0f2445;
+    --pomee: #f1666c;
+    --pomee-soft: #2a1418;
+    --leaf: #4cc488;
   }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-pomee: var(--pomee);
+  --color-pomee-soft: var(--pomee-soft);
+  --color-leaf: var(--leaf);
+  --font-sans: var(--font-geist-sans);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Long-form legal text. */
+.prose-legal {
+  line-height: 1.75;
+}
+.prose-legal h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.prose-legal h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.prose-legal p,
+.prose-legal ul {
+  margin-bottom: 1rem;
+  color: var(--muted);
+}
+.prose-legal ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+}
+.prose-legal li {
+  margin-bottom: 0.4rem;
+}
+.prose-legal strong {
+  color: var(--foreground);
+  font-weight: 600;
+}
+.prose-legal code {
+  overflow-wrap: anywhere;
+}
+.prose-legal a {
+  color: var(--brand);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose-legal table {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.prose-legal th,
+.prose-legal td {
+  border-bottom: 1px solid var(--line);
+  padding: 0.6rem 0.5rem;
+  text-align: left;
+  vertical-align: top;
+}
+.prose-legal th {
+  font-weight: 600;
+}
+.prose-legal td {
+  color: var(--muted);
 }
